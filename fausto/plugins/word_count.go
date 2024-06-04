@@ -36,7 +36,7 @@ func (w WordCountPlugin) Execute(input PluginInputData) {
 	log.Printf("WordCount plugin begining execution on content: %s", input.Id)
 	count := countWord(input.Content)
 
-	wordCountMetadata := store.CreateWordCountDTO{Id: input.Id, WordCount: count}
+	wordCountMetadata := store.CreateWordCountDTO{Id: input.Id, WordCount: count, TextId: input.Id}
 
 	if err := store.GetStore().WordCountStore().CreateWordCountMetadata(&wordCountMetadata); err != nil {
 		log.Printf("Error while saving word count matadata: %v", err)

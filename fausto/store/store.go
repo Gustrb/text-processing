@@ -73,6 +73,7 @@ type SpellCheckerStore interface {
 type CreateWordCountDTO struct {
 	Id        primitive.ObjectID `json:"id" bson:"_id"`
 	WordCount int                `json:"wordCount" bson:"WordCount"`
+	TextId    primitive.ObjectID `json:"textId"`
 }
 
 type WordCountStore interface {
